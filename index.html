@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rocket League 2D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="screen-menu" class="screen active">
+    <div class="logo">
+      <div class="logo-top">ROCKET</div>
+      <div class="logo-bot">LEAGUE 2D</div>
+    </div>
+    <div class="controls-preview">
+      <div class="ctrl-card blue">
+        <div class="ctrl-title">🔵 BLUE</div>
+        <div class="ctrl-row"><kbd>W</kbd> Jump</div>
+        <div class="ctrl-row"><kbd>A</kbd><kbd>D</kbd> Move</div>
+        <div class="ctrl-row"><kbd>S</kbd> Boost</div>
+      </div>
+      <div class="ctrl-card orange">
+        <div class="ctrl-title">🟠 ORANGE</div>
+        <div class="ctrl-row"><kbd>↑</kbd> Jump</div>
+        <div class="ctrl-row"><kbd>←</kbd><kbd>→</kbd> Move</div>
+        <div class="ctrl-row"><kbd>↓</kbd> Boost</div>
+      </div>
+    </div>
+    <button id="btn-start" class="btn-main">KICK OFF</button>
+    <div class="time-select">
+      <span>Match Time:</span>
+      <button class="time-btn active" data-t="60">1 MIN</button>
+      <button class="time-btn" data-t="120">2 MIN</button>
+      <button class="time-btn" data-t="180">3 MIN</button>
+    </div>
+  </div>
+
+  <div id="screen-game" class="screen">
+    <div id="hud">
+      <div class="hud-score blue-score">
+        <div class="hud-label">BLUE</div>
+        <div class="hud-num" id="score-blue">0</div>
+      </div>
+      <div class="hud-center">
+        <div id="hud-timer">1:00</div>
+        <div id="hud-msg"></div>
+      </div>
+      <div class="hud-score orange-score">
+        <div class="hud-label">ORANGE</div>
+        <div class="hud-num" id="score-orange">0</div>
+      </div>
+    </div>
+    <div id="boost-bars">
+      <div class="boost-wrap left">
+        <div class="boost-label">BOOST</div>
+        <div class="boost-track"><div id="boost-blue" class="boost-fill blue-fill"></div></div>
+      </div>
+      <div class="boost-wrap right">
+        <div class="boost-label">BOOST</div>
+        <div class="boost-track"><div id="boost-orange" class="boost-fill orange-fill"></div></div>
+      </div>
+    </div>
+    <canvas id="game"></canvas>
+  </div>
+
+  <div id="screen-end" class="screen">
+    <div class="end-content">
+      <div id="end-title"></div>
+      <div id="end-score"></div>
+      <button id="btn-rematch" class="btn-main">REMATCH</button>
+      <button id="btn-menu" class="btn-sec">MAIN MENU</button>
+    </div>
+  </div>
+
+  <canvas id="particles" style="position:fixed;top:0;left:0;pointer-events:none;z-index:10;"></canvas>
+  <script src="game.js"></script>
+</body>
+</html>
